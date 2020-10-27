@@ -28,8 +28,8 @@ while cd:
             print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
             ma5 = sum(rvddata.close.iloc[-5:])/5
             ma15 = sum(rvddata.close.iloc[-15:])/15
-            #print("最新价:", rvddata.close.iloc[-1], ",MA5:", ma5, ",MA15:", ma15)
-            #print("UP:", up, "ma5-ma15:", ma5-ma15)
+            print("最新价:", rvddata.close.iloc[-1], ",MA5:", ma5, ",MA15:", ma15)
+            print("UP:", up, "ma5-ma15:", ma5-ma15)
             position = api.get_position(sys.argv[2])
             print(position.float_profit_long + position.float_profit_short)
             if ma5 - ma15 > 0 and up < 0: 
@@ -44,8 +44,8 @@ while cd:
             print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
             ma5 = sum(rvddata.close.iloc[-5:])/5
             ma15 = sum(rvddata.close.iloc[-15:])/15
-            #print("最新价:", rvddata.close.iloc[-1], ",MA5:", ma5, ",MA15:", ma15)
-            #print("UP:", up, "ma5-ma15:", ma5-ma15)
+            print("最新价:", rvddata.close.iloc[-1], ",MA5:", ma5, ",MA15:", ma15)
+            print("UP:", up, "ma5-ma15:", ma5-ma15)
             position = api.get_position(sys.argv[2])
             print(position.float_profit_long + position.float_profit_short)
             if ma5 - ma15 < 0 and up > 0:

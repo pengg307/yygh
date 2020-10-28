@@ -23,26 +23,27 @@ rvddata = klines
 cd = 10;
 up = -1
 while cd:
-    # 画一次指标线
-    ma7 = MA(klines, 7)  # 使用 tqsdk 自带指标函数计算均线
-    ma20 = MA(klines, 20)  # 使用 tqsdk 自带指标函数计算均线
-    ma50 = MA(klines, 50)  # 使用 tqsdk 自带指标函数计算均线
-
-    klines["ma7_MAIN"] = ma7.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
-    klines["ma7_MAIN.color"] = "green"  # 在主图中画一根默认颜色（红色）的 ma 指标线
-    klines["ma20_MAIN"] = ma20.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
-    klines["ma7_MAIN.color"] = "yellow"  # 在主图中画一根默认颜色（红色）的 ma 指标线
-    klines["ma50_MAIN"] = ma50.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
-    klines["ma7_MAIN.color"] = "blue"  # 在主图中画一根默认颜色（红色）的 ma 指标线
-
-    # 示例2: 在另一个附图画一根比ma小4的宽度为4的紫色指标线
-    klines["yy"] = ma7.ma - 4
-    klines["yy.board"] = "YY"  # 设置为另一个附图
-    klines["yy.color"] = 0xFF9933CC  # 设置为紫色, 或者 "#9933FF"
-    klines["yy.width"] = 4  # 设置宽度为4，默认为1
 
     # 判断开仓条件
     while True:
+        # 画一次指标线
+        ma7 = MA(klines, 7)  # 使用 tqsdk 自带指标函数计算均线
+        ma20 = MA(klines, 20)  # 使用 tqsdk 自带指标函数计算均线
+        ma50 = MA(klines, 50)  # 使用 tqsdk 自带指标函数计算均线
+
+        klines["ma7_MAIN"] = ma7.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
+        klines["ma7_MAIN.color"] = 0xFF0000  # 在主图中画一根默认颜色（红色）的 ma 指标线
+        klines["ma20_MAIN"] = ma20.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
+        klines["ma7_MAIN.color"] = 0x00FF00  # 在主图中画一根默认颜色（红色）的 ma 指标线
+        klines["ma50_MAIN"] = ma50.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
+        klines["ma7_MAIN.color"] = "blue"  # 在主图中画一根默认颜色（红色）的 ma 指标线
+
+        # 示例2: 在另一个附图画一根比ma小4的宽度为4的紫色指标线
+        klines["yy"] = ma7.ma - 4
+        klines["yy.board"] = "YY"  # 设置为另一个附图
+        klines["yy.color"] = 0xFF9933CC  # 设置为紫色, 或者 "#9933FF"
+        klines["yy.width"] = 4  # 设置宽度为4，默认为1
+
         api.wait_update()
         if api.is_changing(klines):
             print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))

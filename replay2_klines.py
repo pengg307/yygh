@@ -2,11 +2,11 @@
 #-*- coding:utf-8 -*-
 #!/usr/bin/env python
 #  -*- coding: utf-8 -*-
-__author__ = 'chengzhi'
+__author__ = 'pengg'
 
 from datetime import date
 from tqsdk import TqApi, TqAuth, TqReplay, TargetPosTask
-
+from tqsdk.ta import MA
 '''
 复盘 2020-05-26
 如果当前价格大于5分钟K线的MA15则开多仓,如果小于则平仓
@@ -19,6 +19,18 @@ klines = api.get_kline_serial("SHFE.cu2102", 5 * 60, data_length=15)
 target_pos = TargetPosTask(api, "SHFE.cu2102")
 
 while True:
+    ma3 = MA(klines, 3)  # 使用 tqsdk 自带指标函数计算均线
+    ma5 = MA(klines, 5)  # 使用 tqsdk 自带指标函数计算均线
+
+    klines["ma3_MAIN.board"] = "MA3"
+    klines["ma3_MAIN"] = ma3.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
+    klines["ma3_MAIN.color"] = 0x00FF00  # 在主图中画一根默认颜色（红色）的 ma 指标线
+    klines["ma5_MAIN.board"] = "MA5"
+    klines["ma5_MAIN"] = ma5.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
+    klines["ma5_MAIN.color"] = "blue"  # 在主图中画一根默认颜色（红色）的 ma 指标线
+    klines["ma5_MAIN.width"] = 4  # 设置宽度为4，默认为1
+
+
     api.wait_update()
     if api.is_changing(klines):
         ma = sum(klines.close.iloc[-15:]) / 15

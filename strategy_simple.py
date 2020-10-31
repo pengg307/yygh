@@ -6,33 +6,20 @@ from tqsdk import TqApi, TqAuth, TargetPosTask, TqReplay
 from tqsdk.ta import MA
 from datetime import date
 import time
-import sys
-
-# make a copy of original stdout route
-stdout_backup = sys.stdout
-
-# define the log file that receives your log info
-log_file = open("realmessage.log", "w")
-
-# redirect print output to log file
-sys.stdout = log_file
-
-log_file.close()
-# restore the output to initial pattern
-sys.stdout = stdout_backup
 
 # 设置合约
 SYMBOL = "SHFE.ag2102"
 # 设置均线长短周期
 MA_SLOW, MA_FAST = 3, 5
-
-api = TqApi(web_gui=":16666", backtest=TqReplay(date(2020, 10, 30)), auth=TqAuth("aimoons", "112411"))
+replay = TqReplay(date(2020, 10, 30))
+replay.set_replay_speed(2000.0)
+api = TqApi(web_gui=":16666", backtest=replay, auth=TqAuth("aimoons", "112411"))
 #api = TqApi(web_gui=":16789", auth=TqAuth("aimoons", "112411"))
-klines = api.get_kline_serial(SYMBOL, 60)
+klines = api.get_kline_serial(SYMBOL, 300)
 quote = api.get_quote(SYMBOL)
 position = api.get_position(SYMBOL)
 target_pos = TargetPosTask(api, SYMBOL)
-
+order={}
 # K线收盘价在这根K线波动范围函数
 def kline_range(num):
     kl_range = (klines.iloc[num].close - klines.iloc[num].low) / \
@@ -111,23 +98,13 @@ us, vs = False, False
 while True:
     ma3 = MA(klines, MA_SLOW)  # 使用 tqsdk 自带指标函数计算均线
     ma5 = MA(klines, MA_FAST)  # 使用 tqsdk 自带指标函数计算均线
-
     klines["ma3_MAIN.board"] = "MA3"
     klines["ma3_MAIN"] = ma3.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
     klines["ma3_MAIN.color"] = 0x00FF00  # 在主图中画一根默认颜色（红色）的 ma 指标线
-    klines["ma5_MAIN.board"] = "MA5"
-    klines["ma5_MAIN"] = ma5.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
+    #klines["ma5_MAIN.board"] = "MA5"
+    #klines["ma5_MAIN"] = ma5.ma  # 在主图中画一根默认颜色（红色）的 ma 指标线
     #klines["ma5_MAIN.color"] = "yellow"  # 在主图中画一根默认颜色（红色）的 ma 指标线
     #klines["ma5_MAIN.width"] = 1  # 设置宽度为4，默认为1
-    if us:
-        klines["ma5_MAIN.color"] = 0xFF00FF  # 在主图中画一根默认颜色（红色）的 ma 指标线
-        klines["ma5_MAIN.width"] = 4  # 设置宽度为4，默认为1
-    elif vs:
-        klines["ma5_MAIN.color"] = 0x0000FF  # 在主图中画一根默认颜色（红色）的 ma 指标线
-        klines["ma5_MAIN.width"] = 4  # 设置宽度为4，默认为1
-    else:
-        klines["ma5_MAIN.color"] = 0xFFFFFF  # 在主图中画一根默认颜色（红色）的 ma 指标线
-        klines["ma5_MAIN.width"] = 4  # 设置宽度为4，默认为1
 
     api.wait_update()
     # 每次k线更新，重新计算快慢均线
@@ -139,9 +116,9 @@ while True:
         us = usignal(0)
         vs = vsignal(0)
         #print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
-        print(position.float_profit_long + position.float_profit_short)
         print("usignal:"+str(us)+", vsignal:"+str(vs))
         print("最新价", quote.datetime, quote.last_price)
+        print(position.float_profit_long + position.float_profit_short)
     if api.is_changing(quote, "last_price"):
         # 开仓判断
         if position.pos_long == 0 and position.pos_short == 0:
@@ -152,43 +129,63 @@ while True:
             #if klines.iloc[-2].close > max(ma_slow, ma_fast) and kl_range_pre <= 0.25 and kl_range_cur >= 0.75:
             if us:
                 print("最新价为:%.2f 开多头" % quote.last_price)
-                target_pos.set_target_volume(10)
-
+                #target_pos.set_target_volume(10)
+                order=api.insert_order(symbol=SYMBOL, direction="BUY", offset="OPEN", volume=1, limit_price=quote.ask_price1)
+                while order.status != "FINISHED":
+                  api.wait_update()
+                print("已开多仓",quote.ask_price1)
             # 开空头判断，最近一根K线收盘价在短期均线和长期均线之下，前一根K线收盘价位于K线波动范围顶部25%，最近这根K线收盘价位于K线波动范围底部25%
             #elif klines.iloc[-2].close < min(ma_slow, ma_fast) and kl_range_pre >= 0.75 and kl_range_cur <= 0.25:
             elif vs:
                 print("最新价为:%.2f 开空头" % quote.last_price)
-                target_pos.set_target_volume(-10)
+                #target_pos.set_target_volume(-10)
+                order=api.insert_order(symbol=SYMBOL, direction="SELL", offset="OPEN", volume=1, limit_price=quote.bid_price1)
+                while order.status != "FINISHED":
+                  api.wait_update()
+                print("已开空仓",quote.bid_price1)
             else:
                 #print("最新价位:%.2f ，未满足开仓条件" % quote.last_price)
                 cur
-
         # 多头持仓止损策略
         elif position.pos_long > 0:
             # 在两根K线较低点减一跳，进行多头止损
-            kline_low = min(klines.iloc[-2].low, klines.iloc[-3].low)
+            #kline_low = min(klines.iloc[-2].low, klines.iloc[-3].low)
             #if klines.iloc[-1].close <= kline_low - quote.price_tick:
             if vs:
                 print("最新价为:%.2f,进行多头!止损" % (quote.last_price))
-                target_pos.set_target_volume(0)
-            else:
+                #target_pos.set_target_volume(0)
+                order=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
+                while order.status != "FINISHED":
+                  api.wait_update()
+                print("已平多今",quote.bid_price1)
+            elif position.open_price_long >  quote.last_price + 5 :
                 #print("多头持仓，当前价格 %.2f,多头离场价格%.2f" %
                   #    (quote.last_price, kline_low - quote.price_tick))
-                  cur
+                print("最新价为:%.2f,进行多头止损" % (quote.last_price))
+                order=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
+                while order.status != "FINISHED":
+                  api.wait_update()
+                print("已平多今to, from,",quote.bid_price1, position.open_price_long)
+                  
 
         # 空头持仓止损策略
-        elif False:# position.pos_short > 0:
+        elif position.pos_short > 0:
             # 在两根K线较高点加一跳，进行空头止损
-            kline_high = max(klines.iloc[-2].high, klines.iloc[-3].high)
+            #kline_high = max(klines.iloc[-2].high, klines.iloc[-3].high)
             #if klines.iloc[-1].close >= kline_high + quote.price_tick:
             if us:
                 print("最新价为:%.2f 进行空头!止损" % quote.last_price)
-                target_pos.set_target_volume(0)
-            else:
+                #target_pos.set_target_volume(0)
+                order=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
+                while order.status != "FINISHED":
+                  api.wait_update()
+                print("已平空今",quote.ask_price1)
+            elif position.open_price_short < quote.last_price - 5 :
                 #print("空头持仓，当前价格 %.2f,空头离场价格%.2f" %
                  #     (quote.last_price, kline_high + quote.price_tick))
-                 cur
+                print("最新价为:%.2f,进行空头止损" % (quote.last_price))
+                order=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
+                while order.status != "FINISHED":
+                  api.wait_update()
+                print("已平空今to, from,",quote.ask_price1, position.open_price_short)
 
-log_file.close()
-# restore the output to initial pattern
-sys.stdout = stdout_backup

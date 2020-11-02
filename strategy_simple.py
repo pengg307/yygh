@@ -2,21 +2,23 @@
 #  -*- coding: utf-8 -*-
 __author__ = "pengg"
 #参考: https://www.shinnytech.com/blog/escalator/
-from tqsdk import TqApi, TqAuth, TargetPosTask, TqReplay
+from tqsdk import TqApi, TqAuth, TargetPosTask, TqReplay, TqBacktest
 from tqsdk.ta import MA
 from datetime import date
-import time
+import time, sys
 
 # 设置合约
-SYMBOL = "SHFE.ag2102"
+SYMBOL = "SHFE.ni2102"
 # 设置均线长短周期
 MA_SLOW, MA_FAST = 3, 5
-replay = TqReplay(date(2020, 10, 30))
+replay = TqReplay(date(2020, 10, int(sys.argv[1])))
 replay.set_replay_speed(2000.0)
 api = TqApi(web_gui=":16666", backtest=replay, auth=TqAuth("aimoons", "112411"))
+#prof...api = TqApi(web_gui=":16666", backtest=TqBacktest(start_dt=date(2020, 10, 12), end_dt=date(2020, 10, 16)), auth=TqAuth("aimoons", "112411"))
 #api = TqApi(web_gui=":16789", auth=TqAuth("aimoons", "112411"))
 klines = api.get_kline_serial(SYMBOL, 300)
 quote = api.get_quote(SYMBOL)
+account = api.get_account()
 position = api.get_position(SYMBOL)
 target_pos = TargetPosTask(api, SYMBOL)
 order={}
@@ -119,6 +121,7 @@ while True:
         print("usignal:"+str(us)+", vsignal:"+str(vs))
         print("最新价", quote.datetime, quote.last_price)
         print(position.float_profit_long + position.float_profit_short)
+        print(account.float_profit)
     if api.is_changing(quote, "last_price"):
         # 开仓判断
         if position.pos_long == 0 and position.pos_short == 0:
@@ -158,7 +161,7 @@ while True:
                 while order.status != "FINISHED":
                   api.wait_update()
                 print("已平多今",quote.bid_price1)
-            elif position.open_price_long >  quote.last_price + 5 :
+            elif False: #position.open_price_long >  quote.last_price + 5 :
                 #print("多头持仓，当前价格 %.2f,多头离场价格%.2f" %
                   #    (quote.last_price, kline_low - quote.price_tick))
                 print("最新价为:%.2f,进行多头止损" % (quote.last_price))
@@ -180,7 +183,7 @@ while True:
                 while order.status != "FINISHED":
                   api.wait_update()
                 print("已平空今",quote.ask_price1)
-            elif position.open_price_short < quote.last_price - 5 :
+            elif False: #position.open_price_short < quote.last_price - 5 :
                 #print("空头持仓，当前价格 %.2f,空头离场价格%.2f" %
                  #     (quote.last_price, kline_high + quote.price_tick))
                 print("最新价为:%.2f,进行空头止损" % (quote.last_price))

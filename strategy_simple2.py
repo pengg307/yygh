@@ -18,8 +18,8 @@ MA_SLOW, MA_FAST = 3, 5
 
 #prof...api = TqApi(web_gui=":16666", backtest=TqBacktest(start_dt=date(2020, 10, 12), end_dt=date(2020, 10, 16)), auth=TqAuth("aimoons", "112411"))
 
-api = TqApi(web_gui=":16789", auth=TqAuth("aimoons", "112411"))
-klines = api.get_kline_serial(SYMBOL, 300)
+api = TqApi(web_gui=":26789", auth=TqAuth("aimoons", "112411"))
+klines = api.get_kline_serial(SYMBOL, 60)
 quote = api.get_quote(SYMBOL)
 account = api.get_account()
 position = api.get_position(SYMBOL)
@@ -166,14 +166,14 @@ while True:
             # 在两根K线较低点减一跳，进行多头止损
             #kline_low = min(klines.iloc[-2].low, klines.iloc[-3].low)
             #if klines.iloc[-1].close <= kline_low - quote.price_tick:
-            if vs and position.open_price_long < quote.last_price + 15 :
+            if vs and position.open_price_long < quote.last_price + 9 :
                 print("最新价为:%.2f,进行多头止win" % (quote.last_price))
                 #target_pos.set_target_volume(0)
                 ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已平多今",quote.bid_price1)
-            elif position.open_price_long >  quote.last_price + 5 :
+            elif position.open_price_long >  quote.last_price + 3 :
                 #print("多头持仓，当前价格 %.2f,多头离场价格%.2f" %
                   #    (quote.last_price, kline_low - quote.price_tick))
                 print("最新价为:%.2f,进行多头止损" % (quote.last_price))
@@ -188,14 +188,14 @@ while True:
             # 在两根K线较高点加一跳，进行空头止损
             #kline_high = max(klines.iloc[-2].high, klines.iloc[-3].high)
             #if klines.iloc[-1].close >= kline_high + quote.price_tick:
-            if us and position.open_price_short > quote.last_price + 15 :
+            if us and position.open_price_short > quote.last_price + 9 :
                 print("最新价为:%.2f 进行空头止win" % quote.last_price)
                 #target_pos.set_target_volume(0)
                 orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已平空今",quote.ask_price1)
-            elif position.open_price_short < quote.last_price - 5 :
+            elif position.open_price_short < quote.last_price - 3 :
                 #print("空头持仓，当前价格 %.2f,空头离场价格%.2f" %
                  #     (quote.last_price, kline_high + quote.price_tick))
                 print("最新价为:%.2f,进行空头止损" % (quote.last_price))

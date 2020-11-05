@@ -18,8 +18,8 @@ MA_SLOW, MA_FAST = 3, 5
 
 #prof...api = TqApi(web_gui=":16666", backtest=TqBacktest(start_dt=date(2020, 10, 12), end_dt=date(2020, 10, 16)), auth=TqAuth("aimoons", "112411"))
 
-api = TqApi(web_gui=":16789", auth=TqAuth("aimoons", "112411"))
-klines = api.get_kline_serial(SYMBOL, 30)
+api = TqApi(web_gui=":36789", auth=TqAuth("aimoons", "112411"))
+klines = api.get_kline_serial(SYMBOL, 300)
 quote = api.get_quote(SYMBOL)
 account = api.get_account()
 position = api.get_position(SYMBOL)

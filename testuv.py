@@ -16,52 +16,52 @@ def v1(rindex=0):
     return klines[cur-rindex] > klines[cur-1-rindex] \
             and klines[cur-rindex] > klines[cur-2-rindex]
 def v2(rindex=0):
-    return v1(1) and veven(rindex)
+    return v1(1+rindex) and veven(rindex)
 def v3(rindex=0):
-    return v2(1) and vodd(rindex)
+    return v2(1+rindex) and vodd(rindex)
 def v4(rindex=0):
-    return v3(1) and veven(rindex)
+    return v3(1+rindex) and veven(rindex)
 def v5(rindex=0):
-    return v4(1) and vodd(rindex)
+    return v4(1+rindex) and vodd(rindex)
 def v6(rindex=0):
-    return v5(1) and veven(rindex)
+    return v5(1+rindex) and veven(rindex)
 def v7(rindex=0):
-    return v6(1) and vodd(rindex)
+    return v6(1+rindex) and vodd(rindex)
 def v8(rindex=0):
-    return v7(1) and veven(rindex)
+    return v7(1+rindex) and veven(rindex)
 def v9(rindex=0):
-    return v8(1) and vodd(rindex)
+    return v8(1+rindex) and vodd(rindex)
 def va(rindex=0):
-    return v9(1) and veven(rindex)
+    return v9(1+rindex) and veven(rindex)
 def vb(rindex=0):
-    return va(1) and vodd(rindex)
+    return va(1+rindex) and vodd(rindex)
 def vc(rindex=0):
-    return vb(1) and veven(rindex)
+    return vb(1+rindex) and veven(rindex)
 def u1(rindex=0):
     return klines[cur-rindex] < klines[cur-1-rindex] \
             and klines[cur-rindex] < klines[cur-2-rindex]
 def u2(rindex=0):
-    return u1(1) and vodd(rindex)
+    return u1(1+rindex) and vodd(rindex)
 def u3(rindex=0):
-    return u2(1) and veven(rindex)
+    return u2(1+rindex) and veven(rindex)
 def u4(rindex=0):
-    return u3(1) and vodd(rindex)
+    return u3(1+rindex) and vodd(rindex)
 def u5(rindex=0):
-    return u4(1) and veven(rindex)
+    return u4(1+rindex) and veven(rindex)
 def u6(rindex=0):
-    return u5(1) and vodd(rindex)
+    return u5(1+rindex) and vodd(rindex)
 def u7(rindex=0):
-    return u6(1) and veven(rindex)
+    return u6(1+rindex) and veven(rindex)
 def u8(rindex=0):
-    return u7(1) and vodd(rindex)
+    return u7(1+rindex) and vodd(rindex)
 def u9(rindex=0):
-    return u8(1) and veven(rindex)
+    return u8(1+rindex) and veven(rindex)
 def ua(rindex=0):
-    return u9(1) and vodd(rindex)
+    return u9(1+rindex) and vodd(rindex)
 def ub(rindex=0):
-    return ua(1) and veven(rindex)
+    return ua(1+rindex) and veven(rindex)
 def uc(rindex=0):
-    return ub(1) and vodd(rindex)
+    return ub(1+rindex) and vodd(rindex)
 def usignal(z=0):
     return v1 and (u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1) or uc(1))
 def vsignal(z=0):
@@ -71,3 +71,16 @@ print(float(klines[0])+float(klines[1]))
 us = usignal(0)
 vs = vsignal(0)
 print("usignal:"+str(us)+", vsignal:"+str(vs))
+print("v1:"+str(v1(0)))
+print("u1:"+str(u1(1)))
+print("u2:"+str(u1(1) or u2(1)))
+print("u3:"+str(u1(1) or u2(1) or u3(1)))
+print("u4:"+str(u1(1) or u2(1) or u3(1) or u4(1)))
+print("u5:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1)))
+print("u6:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1)))
+print("u7:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1)))
+print("u8:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1)))
+print("u9:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1)))
+print("ua:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1)))
+print("ub:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1)))
+print("uc:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1) or uc(1)))

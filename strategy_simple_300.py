@@ -26,7 +26,7 @@ position = api.get_position(SYMBOL)
 target_pos = TargetPosTask(api, SYMBOL)
 orderbuy={}
 ordersell={}
-limitwinlose=[2,5]
+limitwinlose=[3,7]
 
 # K线收盘价在这根K线波动范围函数
 def kline_range(num):
@@ -111,7 +111,8 @@ while True:
                                klines.iloc[-4].close,",",klines.iloc[-5].close,",",klines.iloc[-6].close,",", \
                                klines.iloc[-7].close,",",klines.iloc[-8].close,",",klines.iloc[-9].close,",", \
                                klines.iloc[-10].close,",",klines.iloc[-11].close,",",klines.iloc[-12].close,",", \
-                               klines.iloc[-13].close,",",klines.iloc[-14].close,",",klines.iloc[-15].close)
+                               klines.iloc[-13].close,",",klines.iloc[-14].close,",",klines.iloc[-15].close,",", \
+                               klines.iloc[-16].close,",",klines.iloc[-17].close,",",klines.iloc[-18].close)
         us = usignal(0)
         vs = vsignal(0)
         #print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
@@ -144,7 +145,7 @@ while True:
             if us :
                 print("最新价为:%.2f 开多头" % quote.last_price)
                 #target_pos.set_target_volume(10)
-                orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="OPEN", volume=1, limit_price=quote.bid_price1)
+                orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="OPEN", volume=1, limit_price=quote.ask_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已开多仓",quote.ask_price1)
@@ -154,7 +155,7 @@ while True:
             elif vs :
                 print("最新价为:%.2f 开空头" % quote.last_price)
                 #target_pos.set_target_volume(-10)
-                ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="OPEN", volume=1, limit_price=quote.ask_price1)
+                ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="OPEN", volume=1, limit_price=quote.bid_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已开空仓",quote.bid_price1)
@@ -166,18 +167,18 @@ while True:
             # 在两根K线较低点减一跳，进行多头止损
             #kline_low = min(klines.iloc[-2].low, klines.iloc[-3].low)
             #if klines.iloc[-1].close <= kline_low - quote.price_tick:
-            if vs and position.open_price_long < quote.last_price + limitwinlose[1]*2 :
+            if vs or position.open_price_long < quote.last_price + limitwinlose[1] :
                 print("最新价为:%.2f,进行多头止win" % (quote.last_price))
                 #target_pos.set_target_volume(0)
-                ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
+                ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已平多今",quote.bid_price1)
-            elif position.open_price_long >  quote.last_price + limitwinlose[0]*2 :
+            elif position.open_price_long >  quote.last_price + limitwinlose[0] :
                 #print("多头持仓，当前价格 %.2f,多头离场价格%.2f" %
                   #    (quote.last_price, kline_low - quote.price_tick))
                 print("最新价为:%.2f,进行多头止损" % (quote.last_price))
-                ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
+                ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已平多今to, from,",quote.bid_price1, position.open_price_long)
@@ -188,18 +189,18 @@ while True:
             # 在两根K线较高点加一跳，进行空头止损
             #kline_high = max(klines.iloc[-2].high, klines.iloc[-3].high)
             #if klines.iloc[-1].close >= kline_high + quote.price_tick:
-            if us and position.open_price_short > quote.last_price + limitwinlose[1]*2 :
+            if us and position.open_price_short > quote.last_price + limitwinlose[1] :
                 print("最新价为:%.2f 进行空头止win" % quote.last_price)
                 #target_pos.set_target_volume(0)
-                orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
+                orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已平空今",quote.ask_price1)
-            elif position.open_price_short < quote.last_price - limitwinlose[0]*2 :
+            elif position.open_price_short < quote.last_price - limitwinlose[0] :
                 #print("空头持仓，当前价格 %.2f,空头离场价格%.2f" %
                  #     (quote.last_price, kline_high + quote.price_tick))
                 print("最新价为:%.2f,进行空头止损" % (quote.last_price))
-                orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.ask_price1)
+                orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="CLOSETODAY", volume=1, limit_price=quote.bid_price1)
                 #while order.status != "FINISHED":
                 #  api.wait_update()
                 #print("已平空今to, from,",quote.ask_price1, position.open_price_short)

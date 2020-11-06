@@ -99,18 +99,19 @@ def ub(rindex=0):
 def uc(rindex=0):
     return ub(1+rindex) and vodd(rindex)
 def usignal(z=0):
-    return v1 and (u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1) or uc(1))
+    return v1(0) and (u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1) or uc(1))
 def vsignal(z=0):
-    return u1 and (v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1) or v9(1) or va(1) or vb(1) or vc(1))
+    return u1(0) and (v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1) or v9(1) or va(1) or vb(1) or vc(1))
 us, vs = False, False
 while True:
     api.wait_update()
     # 每次k线更新，重新计算快慢均线
     if api.is_changing(klines.iloc[-1], "datetime"):
-        print("iloc[-1:-10]:", klines.iloc[-1].close,",",klines.iloc[-2].close,",",klines.iloc[-3].close,",", \
+        print("iloc[-1:-N]:", klines.iloc[-1].close,",",klines.iloc[-2].close,",",klines.iloc[-3].close,",", \
                                klines.iloc[-4].close,",",klines.iloc[-5].close,",",klines.iloc[-6].close,",", \
                                klines.iloc[-7].close,",",klines.iloc[-8].close,",",klines.iloc[-9].close,",", \
-                               klines.iloc[-10].close,",",klines.iloc[-11].close,",",klines.iloc[-12].close)
+                               klines.iloc[-10].close,",",klines.iloc[-11].close,",",klines.iloc[-12].close,",", \
+                               klines.iloc[-13].close,",",klines.iloc[-14].close,",",klines.iloc[-15].close)
         us = usignal(0)
         vs = vsignal(0)
         #print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
@@ -139,7 +140,8 @@ while True:
         # 开仓判断
         if position.pos_long == 0 and position.pos_short == 0:
             # 开多头判断
-            if us and quote.last_price > bollmid :
+            #if us and quote.last_price > bollmid :
+            if us :
                 print("最新价为:%.2f 开多头" % quote.last_price)
                 #target_pos.set_target_volume(10)
                 orderbuy=api.insert_order(symbol=SYMBOL, direction="BUY", offset="OPEN", volume=1, limit_price=quote.bid_price1)
@@ -148,7 +150,8 @@ while True:
                 #print("已开多仓",quote.ask_price1)
             # 开空头判断，最近一根K线收盘价在短期均线和长期均线之下，前一根K线收盘价位于K线波动范围顶部25%，最近这根K线收盘价位于K线波动范围底部25%
             #elif klines.iloc[-2].close < min(ma_slow, ma_fast) and kl_range_pre >= 0.75 and kl_range_cur <= 0.25:
-            elif vs and quote.last_price < bollmid :
+            #elif vs and quote.last_price < bollmid :
+            elif vs :
                 print("最新价为:%.2f 开空头" % quote.last_price)
                 #target_pos.set_target_volume(-10)
                 ordersell=api.insert_order(symbol=SYMBOL, direction="SELL", offset="OPEN", volume=1, limit_price=quote.ask_price1)

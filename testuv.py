@@ -71,16 +71,29 @@ print(float(klines[0])+float(klines[1]))
 us = usignal(0)
 vs = vsignal(0)
 print("usignal:"+str(us)+", vsignal:"+str(vs))
-print("v1:"+str(v1(0)))
-print("u1:"+str(u1(1)))
-print("u2:"+str(u1(1) or u2(1)))
-print("u3:"+str(u1(1) or u2(1) or u3(1)))
-print("u4:"+str(u1(1) or u2(1) or u3(1) or u4(1)))
-print("u5:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1)))
-print("u6:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1)))
-print("u7:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1)))
-print("u8:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1)))
-print("u9:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1)))
-print("ua:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1)))
-print("ub:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1)))
-print("uc:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1) or uc(1)))
+print("v1:"+str(v1(0)) \
++",u1:"+str(u1(1)) \
++",u2:"+str(u1(1) or u2(1)) \
++",u3:"+str(u1(1) or u2(1) or u3(1)) \
++",u4:"+str(u1(1) or u2(1) or u3(1) or u4(1)) \
++",u5:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1)) \
++",u6:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1)) \
++",u7:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1)) \
++",u8:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1)) \
++",u9:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1)) \
++",ua:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1)) \
++",ub:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1)) \
++",uc:"+str(u1(1) or u2(1) or u3(1) or u4(1) or u5(1) or u6(1) or u7(1) or u8(1) or u9(1) or ua(1) or ub(1) or uc(1)))
+print("u1:"+str(u1(0)) \
++",v1:"+str(v1(1)) \
++",v2:"+str(v1(1) or v2(1)) \
++",v3:"+str(v1(1) or v2(1) or v3(1)) \
++",v4:"+str(v1(1) or v2(1) or v3(1) or v4(1)) \
++",v5:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1)) \
++",v6:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1)) \
++",v7:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1)) \
++",v8:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1)) \
++",v9:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1) or v9(1)) \
++",va:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1) or v9(1) or va(1)) \
++",vb:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1) or v9(1) or va(1) or vb(1)) \
++",vc:"+str(v1(1) or v2(1) or v3(1) or v4(1) or v5(1) or v6(1) or v7(1) or v8(1) or v9(1) or va(1) or vb(1) or vc(1)))

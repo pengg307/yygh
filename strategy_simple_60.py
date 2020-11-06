@@ -4,11 +4,25 @@ __author__ = "pengg"
 #参考: https://www.shinnytech.com/blog/escalator/
 from tqsdk import TqApi, TqAuth, TargetPosTask, TqReplay, TqBacktest
 from tqsdk.ta import MA, BOLL
-from datetime import date
+from datetime import date, datetime
 import time, sys
+#import logging
+
+logfile = open("log"+datetime.now().strftime("%Y%m%d-%H%M%S"), encoding="utf-8", mode="w")
+'''
+LOG_FORMAT = "%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s"
+logging.basicConfig(level = logging.INFO, stream = logfile,
+                    datefmt = '%a %d %b %Y %H:%M:%S',
+                    format = LOG_FORMAT)
+logging.debug("This is a debug log.")
+logging.info("This is a info log.")
+logging.warning("This is a warning log.")
+logging.error("This is a error log.")
+logging.critical("This is a critical log.")
+'''
 
 savedStdout = sys.stdout  #保存标准输出流
-logfile = open('./todaylog', 'wt')
+#logfile = open('./todaylog', 'wt')
 sys.stdout = logfile  #标准输出重定向至文件
 
 
@@ -17,13 +31,13 @@ SYMBOL = "SHFE.ag2102"
 # 设置均线长短周期
 MA_SLOW, MA_FAST = 3, 5
 #replay block
-replay = TqReplay(date(2020, 11, int(sys.argv[1])))
-replay.set_replay_speed(2000.0)
-api = TqApi(web_gui=":16666", backtest=replay, auth=TqAuth("aimoons", "112411"))
+#replay = TqReplay(date(2020, 11, int(sys.argv[1])))
+#replay.set_replay_speed(2000.0)
+#api = TqApi(web_gui=":16666", backtest=replay, auth=TqAuth("aimoons", "112411"))
 
 #prof...api = TqApi(web_gui=":16666", backtest=TqBacktest(start_dt=date(2020, 10, 12), end_dt=date(2020, 10, 16)), auth=TqAuth("aimoons", "112411"))
 
-#api = TqApi(web_gui=":26789", auth=TqAuth("aimoons", "112411"))
+api = TqApi(web_gui=":26789", auth=TqAuth("aimoons", "112411"))
 klines = api.get_kline_serial(SYMBOL, 60)
 quote = api.get_quote(SYMBOL)
 account = api.get_account()
@@ -119,6 +133,7 @@ while True:
                                klines.iloc[-13].close,",",klines.iloc[-14].close,",",klines.iloc[-15].close,",", \
                                klines.iloc[-16].close,",",klines.iloc[-17].close,",",klines.iloc[-18].close)
         us, vs = usignal(0), vsignal(0)
+        #logging.info("最新价,acctprofit:"+str(account.float_profit))
         print("us:"+str(us)+", vs:"+str(vs)+",最新价", str(quote.datetime), str(quote.last_price),",profit:"+str(position.float_profit_long) + str(position.float_profit_short)+",acctprofit:"+str(account.float_profit))
         boll=BOLL(klines, 26, 2)
         bollmid, booltop, boolbtm = list(boll["mid"])[-2], list(boll["top"])[-2], list(boll["bottom"])[-2]

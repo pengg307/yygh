@@ -11,7 +11,7 @@ def get_tickers_list():
                ["m","i","p"],
                ["ta","ma"]]
     yrmons = ["2102","2103","2101"]
-    tickerslist = ["SHFE.ag2102","DCE.m2101","SHFE.au2102","DCE.i2102"]#,"CZCE.ta101","CZCE.ma101"]
+    tickerslist = ["SHFE.ag2102","DCE.m2101","SHFE.au2102","DCE.i2102"]#,"CZCE.ap101"]#,"CZCE.ta101","CZCE.ma101"]
     
     #for i in markets:
     #    for j markets.index(i)

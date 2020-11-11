@@ -1,0 +1,62 @@
+Tue 10 Nov 2020 23:53:46 tqwebhelper.py[line:309] INFO: 您可以访问 http://127.0.0.1:26789 查看策略绘制出的 K 线图形。
+Tue 10 Nov 2020 23:54:13 api.py[line:2256] INFO: 通知: 与 wss://free-api.shinnytech.com/t/nfmd/front/mobile 的网络连接已建立
+Tue 10 Nov 2020 23:57:44 tickersreports.py[line:38] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Tue 10 Nov 2020 23:57:44 server.py[line:193] ERROR: Error in connection handler
+Traceback (most recent call last):
+  File "/home/erze/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "tickersreports.py", line 39, in tqdata_live
+    klines = api.get_kline_serial(i, j*60, 200)
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 570, in get_kline_serial
+    if not self.wait_update(deadline=deadline):
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 1201, in wait_update
+    "TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE")
+Exception: TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE
+Tue 10 Nov 2020 23:58:24 tickersreports.py[line:38] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Tue 10 Nov 2020 23:58:24 server.py[line:193] ERROR: Error in connection handler
+Traceback (most recent call last):
+  File "/home/erze/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "tickersreports.py", line 39, in tqdata_live
+    klines = api.get_kline_serial(i, j*60, 200)
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 570, in get_kline_serial
+    if not self.wait_update(deadline=deadline):
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 1201, in wait_update
+    "TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE")
+Exception: TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE
+Wed 11 Nov 2020 00:03:34 tickersreports.py[line:38] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Wed 11 Nov 2020 00:03:34 server.py[line:193] ERROR: Error in connection handler
+Traceback (most recent call last):
+  File "/home/erze/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "tickersreports.py", line 39, in tqdata_live
+    klines = api.get_kline_serial(i, j*60, 200)
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 570, in get_kline_serial
+    if not self.wait_update(deadline=deadline):
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 1201, in wait_update
+    "TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE")
+Exception: TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE
+Wed 11 Nov 2020 00:03:36 tickersreports.py[line:38] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Wed 11 Nov 2020 00:03:36 server.py[line:193] ERROR: Error in connection handler
+Traceback (most recent call last):
+  File "/home/erze/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "tickersreports.py", line 39, in tqdata_live
+    klines = api.get_kline_serial(i, j*60, 200)
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 570, in get_kline_serial
+    if not self.wait_update(deadline=deadline):
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 1201, in wait_update
+    "TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE")
+Exception: TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE
+Wed 11 Nov 2020 00:04:19 tickersreports.py[line:38] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Wed 11 Nov 2020 00:04:19 server.py[line:193] ERROR: Error in connection handler
+Traceback (most recent call last):
+  File "/home/erze/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "tickersreports.py", line 39, in tqdata_live
+    klines = api.get_kline_serial(i, j*60, 200)
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 570, in get_kline_serial
+    if not self.wait_update(deadline=deadline):
+  File "/home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py", line 1201, in wait_update
+    "TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE")
+Exception: TqSdk 使用了 python3 的原生协程和异步通讯库 asyncio，您所使用的 IDE 不支持 asyncio, 请使用 pycharm 或其它支持 asyncio 的 IDE

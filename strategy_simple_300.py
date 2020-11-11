@@ -12,13 +12,13 @@ SYMBOL = "SHFE.ag2102"
 # 设置均线长短周期
 MA_SLOW, MA_FAST = 3, 5
 #replay block
-#replay = TqReplay(date(2020, 11, int(sys.argv[1])))
-#replay.set_replay_speed(2000.0)
-#api = TqApi(web_gui=":16666", backtest=replay, auth=TqAuth("aimoons", "112411"))
+replay = TqReplay(date(2020, 11, 4))# int(sys.argv[1])))
+replay.set_replay_speed(200.0)
+api = TqApi(web_gui=":16666", backtest=replay, auth=TqAuth("aimoons", "112411"))
 
-#prof...api = TqApi(web_gui=":16666", backtest=TqBacktest(start_dt=date(2020, 10, 12), end_dt=date(2020, 10, 16)), auth=TqAuth("aimoons", "112411"))
+#pro...api = TqApi(web_gui=":16666", backtest=TqBacktest(start_dt=date(2020, 10, 12), end_dt=date(2020, 10, 16)), auth=TqAuth("aimoons", "112411"))
 
-api = TqApi(web_gui=":36789", auth=TqAuth("aimoons", "112411"))
+#api = TqApi(web_gui=":36789", auth=TqAuth("aimoons", "112411"))
 klines = api.get_kline_serial(SYMBOL, 300)
 quote = api.get_quote(SYMBOL)
 account = api.get_account()

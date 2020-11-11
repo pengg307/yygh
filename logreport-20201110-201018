@@ -1,0 +1,73 @@
+Tue 10 Nov 2020 20:10:33 tqwebhelper.py[line:309] INFO: 您可以访问 http://127.0.0.1:26789 查看策略绘制出的 K 线图形。
+Tue 10 Nov 2020 20:10:58 api.py[line:2256] INFO: 通知: 与 wss://free-api.shinnytech.com/t/nfmd/front/mobile 的网络连接已建立
+Tue 10 Nov 2020 20:11:27 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:58] INFO: 最新time/kline:5110.0,5110.0,5109.0
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:71] INFO: SHFE.ag2102最新@1,maup:False,madown:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:74] INFO: SHFE.ag2102最新UV价@1,:us:True, vs:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.ag2102curcycle:5
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:58] INFO: 最新time/kline:5110.0,5111.0,5111.0
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:71] INFO: SHFE.ag2102最新@5,maup:True,madown:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:74] INFO: SHFE.ag2102最新UV价@5,:us:False, vs:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.ag2102curcycle:30
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:58] INFO: 最新time/kline:5110.0,5109.0,5102.0
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:71] INFO: SHFE.ag2102最新@30,maup:False,madown:True
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:74] INFO: SHFE.ag2102最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.ag2102curcycle:240
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:58] INFO: 最新time/kline:5110.0,5126.0,5058.0
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:71] INFO: SHFE.ag2102最新@240,maup:False,madown:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:74] INFO: SHFE.ag2102最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.m2101curcycle:1
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:58] INFO: 最新time/kline:3157.0,3161.0,3161.0
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:71] INFO: DCE.m2101最新@1,maup:False,madown:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:74] INFO: DCE.m2101最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.m2101curcycle:5
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:58] INFO: 最新time/kline:3157.0,3160.0,3163.0
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:71] INFO: DCE.m2101最新@5,maup:False,madown:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:74] INFO: DCE.m2101最新UV价@5,:us:False, vs:False
+Tue 10 Nov 2020 20:11:28 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.m2101curcycle:30
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:58] INFO: 最新time/kline:3157.0,3164.0,3153.0
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:71] INFO: DCE.m2101最新@30,maup:False,madown:True
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:74] INFO: DCE.m2101最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.m2101curcycle:240
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:58] INFO: 最新time/kline:3157.0,3174.0,3200.0
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:71] INFO: DCE.m2101最新@240,maup:False,madown:True
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:74] INFO: DCE.m2101最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.au2102curcycle:1
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:58] INFO: 最新time/kline:398.56,398.74,398.82
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:71] INFO: SHFE.au2102最新@1,maup:True,madown:False
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:74] INFO: SHFE.au2102最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.au2102curcycle:5
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:58] INFO: 最新time/kline:398.56,398.5,398.46
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:71] INFO: SHFE.au2102最新@5,maup:True,madown:False
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:74] INFO: SHFE.au2102最新UV价@5,:us:False, vs:False
+Tue 10 Nov 2020 20:11:29 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.au2102curcycle:30
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:58] INFO: 最新time/kline:398.56,397.66,397.54
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:71] INFO: SHFE.au2102最新@30,maup:False,madown:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:74] INFO: SHFE.au2102最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:54] INFO: <<<curticker>>>:SHFE.au2102curcycle:240
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:58] INFO: 最新time/kline:398.56,396.68,393.84
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:71] INFO: SHFE.au2102最新@240,maup:False,madown:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:74] INFO: SHFE.au2102最新UV价@240,:us:True, vs:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.i2102curcycle:1
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:58] INFO: 最新time/kline:800.0,797.5,799.0
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:71] INFO: DCE.i2102最新@1,maup:False,madown:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:74] INFO: DCE.i2102最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.i2102curcycle:5
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:58] INFO: 最新time/kline:800.0,801.0,799.0
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:71] INFO: DCE.i2102最新@5,maup:False,madown:True
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:74] INFO: DCE.i2102最新UV价@5,:us:True, vs:False
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.i2102curcycle:30
+Tue 10 Nov 2020 20:11:30 tickersreports.py[line:58] INFO: 最新time/kline:800.0,803.5,802.5
+Tue 10 Nov 2020 20:11:31 tickersreports.py[line:71] INFO: DCE.i2102最新@30,maup:True,madown:False
+Tue 10 Nov 2020 20:11:31 tickersreports.py[line:74] INFO: DCE.i2102最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 20:11:31 tickersreports.py[line:54] INFO: <<<curticker>>>:DCE.i2102curcycle:240
+Tue 10 Nov 2020 20:11:31 tickersreports.py[line:58] INFO: 最新time/kline:800.0,812.0,806.0
+Tue 10 Nov 2020 20:11:31 tickersreports.py[line:71] INFO: DCE.i2102最新@240,maup:True,madown:False
+Tue 10 Nov 2020 20:11:31 tickersreports.py[line:74] INFO: DCE.i2102最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 20:12:37 server.py[line:193] ERROR: Error in connection handler
+Traceback (most recent call last):
+  File "/home/erze/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "tickersreports.py", line 83, in time
+    await websocket.send(now)
+UnboundLocalError: local variable 'now' referenced before assignment

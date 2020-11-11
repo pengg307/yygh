@@ -1,0 +1,91 @@
+Tue 10 Nov 2020 11:34:02 tqwebhelper.py[line:309] INFO: 您可以访问 http://127.0.0.1:26789 查看策略绘制出的 K 线图形。
+Tue 10 Nov 2020 11:34:19 api.py[line:2256] INFO: 通知: 与 wss://free-api.shinnytech.com/t/nfmd/front/mobile 的网络连接已建立
+Tue 10 Nov 2020 11:34:45 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.ag2102curcycle:1
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:35] INFO: 最新time/kline:5126.0,5127.0,5128.0
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:48] INFO: SHFE.ag2102最新@1,maup:False,madown:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:51] INFO: SHFE.ag2102最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.ag2102curcycle:5
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:35] INFO: 最新time/kline:5126.0,5129.0,5130.0
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:48] INFO: SHFE.ag2102最新@5,maup:True,madown:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:51] INFO: SHFE.ag2102最新UV价@5,:us:False, vs:True
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.ag2102curcycle:30
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:35] INFO: 最新time/kline:5126.0,5120.0,5132.0
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:48] INFO: SHFE.ag2102最新@30,maup:False,madown:True
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:51] INFO: SHFE.ag2102最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.ag2102curcycle:240
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:35] INFO: 最新time/kline:5126.0,5058.0,5146.0
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:48] INFO: SHFE.ag2102最新@240,maup:False,madown:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:51] INFO: SHFE.ag2102最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.m2101curcycle:1
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:35] INFO: 最新time/kline:3174.0,3175.0,3174.0
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:48] INFO: DCE.m2101最新@1,maup:False,madown:True
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:51] INFO: DCE.m2101最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 11:34:46 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.m2101curcycle:5
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:35] INFO: 最新time/kline:3174.0,3177.0,3177.0
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:48] INFO: DCE.m2101最新@5,maup:False,madown:True
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:51] INFO: DCE.m2101最新UV价@5,:us:False, vs:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.m2101curcycle:30
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:35] INFO: 最新time/kline:3174.0,3176.0,3184.0
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:48] INFO: DCE.m2101最新@30,maup:False,madown:True
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:51] INFO: DCE.m2101最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.m2101curcycle:240
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:35] INFO: 最新time/kline:3174.0,3200.0,3203.0
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:48] INFO: DCE.m2101最新@240,maup:False,madown:True
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:51] INFO: DCE.m2101最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.au2102curcycle:1
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:35] INFO: 最新time/kline:396.68,396.88,396.96
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:48] INFO: SHFE.au2102最新@1,maup:False,madown:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:51] INFO: SHFE.au2102最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.au2102curcycle:5
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:35] INFO: 最新time/kline:396.68,397.04,397.24
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:48] INFO: SHFE.au2102最新@5,maup:True,madown:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:51] INFO: SHFE.au2102最新UV价@5,:us:False, vs:True
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.au2102curcycle:30
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:35] INFO: 最新time/kline:396.68,396.72,396.7
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:48] INFO: SHFE.au2102最新@30,maup:False,madown:True
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:51] INFO: SHFE.au2102最新UV价@30,:us:False, vs:False
+Tue 10 Nov 2020 11:34:47 tickersreports.py[line:31] INFO: <<<curticker>>>:SHFE.au2102curcycle:240
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:35] INFO: 最新time/kline:396.68,393.84,395.36
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:48] INFO: SHFE.au2102最新@240,maup:False,madown:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:51] INFO: SHFE.au2102最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.i2102curcycle:1
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:35] INFO: 最新time/kline:812.0,811.5,811.0
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:48] INFO: DCE.i2102最新@1,maup:False,madown:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:51] INFO: DCE.i2102最新UV价@1,:us:False, vs:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.i2102curcycle:5
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:35] INFO: 最新time/kline:812.0,814.0,814.0
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:48] INFO: DCE.i2102最新@5,maup:True,madown:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:51] INFO: DCE.i2102最新UV价@5,:us:False, vs:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.i2102curcycle:30
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:35] INFO: 最新time/kline:812.0,809.5,805.0
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:48] INFO: DCE.i2102最新@30,maup:True,madown:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:51] INFO: DCE.i2102最新UV价@30,:us:True, vs:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:31] INFO: <<<curticker>>>:DCE.i2102curcycle:240
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:35] INFO: 最新time/kline:812.0,806.0,796.0
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:48] INFO: DCE.i2102最新@240,maup:True,madown:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:51] INFO: DCE.i2102最新UV价@240,:us:False, vs:False
+Tue 10 Nov 2020 11:34:48 tickersreports.py[line:31] INFO: <<<curticker>>>:CZCE.ap101curcycle:1
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqApi._notify_watcher() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py:2247> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc49f78>()]> cb=[TqApi._on_task_done()]>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqApi._connect() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py:2309> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc49ee8>()]> cb=[TqApi._on_task_done()]>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqSim._run() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/sim.py:104> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf39511558>()]> cb=[TqApi._on_task_done()]>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqWebHelper._run() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/tqwebhelper.py:114> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf39511618>()]> cb=[TqApi._on_task_done()]>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqApi._send_handler() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py:2446> wait_for=<Future cancelled>>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task cancelling coro=<TqWebHelper._data_handler() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/tqwebhelper.py:157> wait_for=<Future finished result=None>>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqWebHelper.link_httpserver() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/tqwebhelper.py:310> wait_for=<Future cancelled>>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<WebSocketCommonProtocol.transfer_data() running at /home/erze/.local/lib/python3.6/site-packages/websockets/protocol.py:827> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc498e8>()]> cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc49df8>(), _wait.<locals>._on_completion() at /usr/lib/python3.6/asyncio/tasks.py:380]>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<WebSocketCommonProtocol.keepalive_ping() running at /home/erze/.local/lib/python3.6/site-packages/websockets/protocol.py:1121> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc499d8>()]>>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<WebSocketCommonProtocol.close_connection() running at /home/erze/.local/lib/python3.6/site-packages/websockets/protocol.py:1169> wait_for=<Task pending coro=<WebSocketCommonProtocol.transfer_data() running at /home/erze/.local/lib/python3.6/site-packages/websockets/protocol.py:827> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc498e8>()]> cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc49df8>(), _wait.<locals>._on_completion() at /usr/lib/python3.6/asyncio/tasks.py:380]>>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqSim._md_handler() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/sim.py:150> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fcf3dc49e58>()]>>
+Tue 10 Nov 2020 11:34:50 base_events.py[line:1274] ERROR: Task was destroyed but it is pending!
+task: <Task pending coro=<TqApi._fetch_msg() running at /home/erze/.local/lib/python3.6/site-packages/tqsdk/api.py:2467> wait_for=<Future cancelled> cb=[TqApi._on_task_done()]>
